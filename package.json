@@ -1,0 +1,41 @@
+{
+  "name": "directory-browser",
+  "version": "1.0.0",
+  "description": "Twiclo company directory filter",
+  "main": "directory.js",
+  "dependencies": {
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel": "^6.23.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kheeya7/directory-browser.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Kate Sohng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kheeya7/directory-browser/issues"
+  },
+  "homepage": "https://github.com/kheeya7/directory-browser#readme"
+}
