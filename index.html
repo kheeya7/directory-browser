@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header id="header">
+            Place for the navigation
+        </header>
+        <div id="content">
+            <div class="container">
+                <section>
+                    <div id="directory-root"></div>
+                </section>
+            </div>
+        </div>
+        <footer id="footer">
+            Place for the footer
+            <br /> copyright
+        </footer>
+    </div>
+</body>
+<!--
+Polyfills for older browsers
+@see https://reactjs.org/docs/javascript-environment-requirements.html
+<script crossorigin src="https://unpkg.com/core-js@2.5.1/client/shim.min.js"></script>
+<script>window.core || document.write('<script crossorigin src="../../../node_modules/core-js/client/shim.min.js"><\/script>')</script>
+<script src="../../../assets/polyfills/raf-3.4.0-polyfill.min.js"></script>
+-->
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script>window.React || document.write('<script crossorigin src="../../../node_modules/react/umd/react.development.js"><\/script>')</script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script>window.ReactDOM || document.write('<script crossorigin src="../../../node_modules/react-dom/umd/react-dom.development.js"><\/script>')</script>
+
+<script src="./data.js"></script>
+<script src="directory-dist.js"></script>
+
+</html>
