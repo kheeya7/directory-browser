@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './data.js';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 function Person(props) {
     return (
@@ -19,9 +20,18 @@ function Person(props) {
 function People(props) {
     return (
         <div className="result">
-            {props.people.map(function (person) {
-                return <Person key={person.id} person={person} />;
-            })}
+            <TransitionGroup>
+                {props.people.map(function (person) {
+                    return (
+                        <CSSTransition
+                            key={person.id}
+                            classNames="fade"
+                            timeout={2000}>
+                            <Person person={person} />
+                        </CSSTransition>
+                    );
+                })}
+            </TransitionGroup>
         </div>
     );
 }
@@ -90,7 +100,7 @@ class Directory extends React.Component {
 
     updateFormState(name, val) {
         // Compueted property key [ES6 feature]: 
-        // Let us use the one handler function to se any of the keys 
+        // Let us use the one handler function to set any of the keys 
         this.setState(
             {
                 [name]: val
