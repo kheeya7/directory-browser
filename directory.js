@@ -29,15 +29,34 @@ function People(props) {
 function Filters(props) {
     const titles = window.TCDirectory.titles;
 
+    function updateName(evt) {
+        props.updateFormState("currentName", evt.target.value);
+    }
+
+    function updateTitle(evt) {
+        props.updateFormState("currentTitle", evt.target.value);
+    }
+
+    function updateIntern(evt) {
+        props.updateFormState("isIntern", evt.target.checked);
+    }
+
     return (
         <form action="" id="directory-filters">
             <div className="group">
                 <label htmlFor="person-name">Name:</label>
-                <input type="text" name="person_name" placeholder="Name of employee" id="person-name" />
+                <input
+                    type="text"
+                    name="person_name"
+                    laceholder="Name of employee"
+                    id="person-name"
+                    value={props.currentName}
+                    onChange={updateName}
+                />
             </div>
             <div className="group">
                 <label htmlFor="person-title">Job Title:</label>
-                <select name="person-title" id="person-title">
+                <select name="person-title" id="person-title" value={props.currentTitle} onChange={updateTitle}>
                     <option value="">- Select -</option>
                     {titles.map(function (title) {
                         return (
@@ -49,21 +68,34 @@ function Filters(props) {
                 </select>
             </div>
             <div className="group">
-                <label><input type="checkbox" value="1" name="person_intern" /> Intern</label>
+                <label><input type="checkbox" value="1" name="person_intern" checked={props.isIntern} onChange={updateIntern} /> Intern</label>
             </div>
         </form>
     );
 }
 
-// Create the directory component using a class
 class Directory extends React.Component {
     constructor(props) {
         //calling the constructor of the class
         super(props);
 
         this.state = {
-            people: window.TCDirectory.people
+            people: window.TCDirectory.people,
+            currentName: "",
+            currentTitle: "",
+            isIntern: false
         };
+        this.updateFormState = this.updateFormState.bind(this);
+    }
+
+    updateFormState(name, val) {
+        // Compueted property key [ES6 feature]: 
+        // Let us use the one handler function to se any of the keys 
+        this.setState(
+            {
+                [name]: val
+            }
+        );
     }
 
     render() {
@@ -74,10 +106,14 @@ class Directory extends React.Component {
                 </h2>
                 <p>Learn more about each person at Twiclo in this company directory.</p>
 
-                <Filters />
+                <Filters
+                    currentName={this.state.currentName}
+                    currentTitle={this.state.currentTitle}
+                    isIntern={this.state.isIntern}
+                    updateFormState={this.updateFormState}
+                />
 
                 <People people={this.state.people} />
-
             </div>
         );
     }
