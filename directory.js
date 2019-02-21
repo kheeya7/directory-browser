@@ -26,7 +26,7 @@ function People(props) {
                         <CSSTransition
                             key={person.id}
                             classNames="fade"
-                            timeout={2000}>
+                            timeout={1000}>
                             <Person person={person} />
                         </CSSTransition>
                     );
@@ -40,15 +40,23 @@ function Filters(props) {
     const titles = window.TCDirectory.titles;
 
     function updateName(evt) {
-        props.updateFormState("currentName", evt.target.value);
+        props.updateFormState({ "currentName": evt.target.value });
     }
 
     function updateTitle(evt) {
-        props.updateFormState("currentTitle", evt.target.value);
+        props.updateFormState({ "currentTitle": evt.target.value });
     }
 
     function updateIntern(evt) {
-        props.updateFormState("isIntern", evt.target.checked);
+        props.updateFormState({ "isIntern": evt.target.checked });
+    }
+
+    function resetFilters() {
+        props.updateFormState({
+            currentName: '',
+            currentTitle: '',
+            isIntern: false
+        });
     }
 
     return (
@@ -78,7 +86,21 @@ function Filters(props) {
                 </select>
             </div>
             <div className="group">
-                <label><input type="checkbox" value="1" name="person_intern" checked={props.isIntern} onChange={updateIntern} /> Intern</label>
+                <label>
+                    <input
+                        type="checkbox"
+                        value="1"
+                        name="person_intern"
+                        checked={props.isIntern}
+                        onChange={updateIntern}
+                    /> Intern
+                </label>
+            </div>
+            <div className="group">
+                <input type="reset"
+                    value="Reset"
+                    onClick={resetFilters}
+                />
             </div>
         </form>
     );
@@ -98,15 +120,10 @@ class Directory extends React.Component {
         this.updateFormState = this.updateFormState.bind(this);
     }
 
-    updateFormState(name, val) {
+    updateFormState(spec) {
         // Compueted property key [ES6 feature]: 
         // Let us use the one handler function to set any of the keys 
-        this.setState(
-            {
-                [name]: val
-            },
-            this.updatePeopleList
-        );
+        this.setState(spec, this.updatePeopleList);
     }
 
     // search the whole employee list with current filters
