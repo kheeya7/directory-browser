@@ -7,7 +7,7 @@ window.TCDirectory = {
             'intern': false,
             'title': 'Principal Landscape Architect',
             'bio': 'Tony grew up engulfed by the business of landscape design, working most summers with his father, Roberto, at Leaf & Mortar, and with every passing year he knew more and more that he wanted to walk in his father’s footsteps. Roberto, however, was adamant that Tony attend college before settling upon a career. They compromised and Tony set out to study landscape architecture.  After graduating in the top of his class with both a BLA and MLA from University of Oregon, in Eugene, Tony was ready and excited to commit to the family business. Tony’s contributions have included bringing in various public beautification and sustainable design projects that continue to make Portland a progressive, eco-friendly city, and have put Leaf & Mortar on the map for “Small Local Companies with a Big Heart.',
-            'img': 'assets/tony_salvador-300x300.jpg',
+            'img': 'assets/jake-unsplash.jpg',
             'order': 0
         },
         {
@@ -17,7 +17,7 @@ window.TCDirectory = {
             'intern': false,
             'title': 'landscape designer',
             'bio': 'Ailene grew up surrounded by green hills and marshlands in Scotland, and although that lush emerald richness is what first enticed her into landscape design, it was, ironically, her interest in water conservation that made her consider it as a serious career.  After completing her undergraduate studies at the University of Glasgow, she moved to California where she received her masters in Ecological Management and Restoration, and began freelancing with various landscape companies. After building up a healthy portfolio of prestigious landscape restoration projects in California’s drought-stricken environment, Ailene was granted membership into the Association of Professional Landscape Designers. Since then, she’s been a key member of our team, and has turned many green yards, into water-friendly rock gardens.',
-            'img': 'assets/Ailene_McDott-300x300.jpg',
+            'img': 'assets/Geena-Draper-300x300.jpg',
             'order': 1
         },
         {

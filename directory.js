@@ -25,7 +25,12 @@ function People(props) {
                     return (
                         <CSSTransition
                             key={person.id}
-                            classNames="fade"
+                            classNames={{
+                                enter: "animated",
+                                enterActive: "zoomIn",
+                                exit: "animated",
+                                exitActive: "fadeOut"
+                            }}
                             timeout={1000}>
                             <Person person={person} />
                         </CSSTransition>
