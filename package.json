@@ -4,6 +4,7 @@
   "description": "Twiclo company directory filter",
   "main": "directory.js",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
